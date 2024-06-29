@@ -168,13 +168,30 @@ public class Books {
     	  System.out.println("Enter the name of the book to check in: ");
     	  String bookName = input.nextLine();
     	  for (int i = 0; i < count; i++) {
-    	    if (bookName.equals(theBooks[i].bookName)) { 
-    	      theBooks[i].bookQtyCopy++; 
-    	      System.out.println("Book checked in successfully.");
-    	      return; // Exit the method after checking in the book
+    	    if (bookName.equals(theBooks[i].bookName)) {
+    	      System.out.println("How many copies of '" + bookName + "' are you checking in?");
+    	      String checkInQtyStr = input.nextLine();
+    	      int checkInQty;
+    	      try {
+    	        checkInQty = Integer.parseInt(checkInQtyStr);
+    	        if (checkInQty <= 0) {
+    	          System.out.println("Please enter a positive number of copies.");
+    	        }
+    	        else if (checkInQty > theBooks[i].bookQty - theBooks[i].bookQtyCopy) { 
+    	            System.out.println("You can't check in more copies than you checked out. You have " 
+                            + (theBooks[i].bookQty - theBooks[i].bookQtyCopy) 
+                            + " copies checked out.");
+    	        				} 
+    	        else { 
+         theBooks[i].bookQtyCopy += checkInQty;
+         System.out.println(checkInQty + " copies of '" + bookName + "' checked in successfully.");
+    	        }
+    	      } catch (NumberFormatException e) {
+    	        System.out.println("Invalid input. Please enter a number.");
+    	      }
     	    }
     	  }
-    	  System.out.println("No book with the name '" + bookName + "' was found.");
+    	 // System.out.println("No book with the name '" + bookName + "' was found.");
     	}
     
     //check out books
