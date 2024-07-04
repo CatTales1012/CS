@@ -6,7 +6,7 @@ public class StudentRecord {
 	
 	public static void main(String [] args) {
 		
-		//creating a login for admin to use to access data
+		//this creates a student in the system for a reference
 		StuRecManage hr = new StuRecManage();
 		
 		Record record = new Record();
