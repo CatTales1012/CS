@@ -4,5 +4,5 @@
 /**
  * 
  */
-module library {
+module Stock {
 }
