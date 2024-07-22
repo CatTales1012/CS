@@ -56,12 +56,12 @@ public class CourseManagement {
     }
 
     public static List<Course> getCourses() {
-    	//cannot modify list courses
+    	//cannot modify list courses being viewed
         return Collections.unmodifiableList(courses);
     }
 
     public static List<Student> getStudents() {
-    	//cannot modify list students
+    	//cannot modify list students being viewed
         return Collections.unmodifiableList(students);
     }
 }
