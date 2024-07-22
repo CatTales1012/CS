@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Stock {
+module Grades {
 }
