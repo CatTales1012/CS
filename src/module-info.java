@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Grades {
+module CarRental {
 }
